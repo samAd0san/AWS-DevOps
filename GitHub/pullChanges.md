@@ -7,5 +7,5 @@
 
 ### Or
 ```
-git pull origin backend => combines git fetch and git merge
+git pull origin <branch-name> => combines git fetch and git merge
 ```
