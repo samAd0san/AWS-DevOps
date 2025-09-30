@@ -49,3 +49,45 @@ PS C:\WINDOWS\system32> Stop-Service -Name "postgresql-x64-15"
 ```powershell
 PS C:\WINDOWS\system32> Stop-Service -Name "postgresql-x64-17"
 ```
+
+---------------------------------------------------------------x
+## 1️⃣ Set both to **start automatically** at boot
+
+```powershell
+# Set startup type to Automatic
+Set-Service -Name "postgresql-x64-15" -StartupType Automatic
+Set-Service -Name "postgresql-x64-17" -StartupType Automatic
+
+# Start both services immediately
+Start-Service -Name "postgresql-x64-15"
+Start-Service -Name "postgresql-x64-17"
+```
+
+✅ Both servers will now start automatically when Windows boots.
+
+---
+
+## 2️⃣ Set both to **stop automatically** or prevent auto-start
+
+```powershell
+# Set startup type to Manual (won't start automatically)
+Set-Service -Name "postgresql-x64-15" -StartupType Manual
+Set-Service -Name "postgresql-x64-17" -StartupType Manual
+
+# Stop both services immediately
+Stop-Service -Name "postgresql-x64-15"
+Stop-Service -Name "postgresql-x64-17"
+```
+
+✅ This ensures neither server starts on boot and both are stopped immediately.
+
+---
+
+## 3️⃣ Verify the status
+
+```powershell
+Get-Service -Name "postgresql-x64-15","postgresql-x64-17" | Select-Object Name, Status, StartType
+```
+
+- `Status` → Running / Stopped
+- `StartType` → Automatic / Manual
