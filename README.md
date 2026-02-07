@@ -1,3 +1,10 @@
+### Initialize hybrid react native app along with expo and cli - runs on a single terminal
+```bash
+npx create-expo-app@latest HybridApp --template bare-minimum
+cd HybridApp
+npm install
+```
+
 ### Add kafka container on port 9092 (default)
 ```bash
 docker run -d -p 9092:9092 apache/kafka:latest
