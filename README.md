@@ -1,3 +1,14 @@
+### Add co author in commit
+```
+git commit -m "feat: objects and interfaces
+
+Co-authored-by: samAd0byte <samad@parcera.ai>"
+```
+
+- Without --amend → creates a new commit with the co-author.
+- With --amend → updates your last existing commit to add the co-author.
+
+
 ### Initialize hybrid react native app along with expo and cli - runs on a single terminal
 ```bash
 npx create-expo-app@latest HybridApp --template bare-minimum
